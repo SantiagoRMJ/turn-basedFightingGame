@@ -194,39 +194,10 @@ let golpeEscudo = golpeEscudoGuerrera;
 
 //defino a los personajes
 
-let ladron = new Fighter("Ladron", 56, 0.3, 8, 2, puñalada, golpeBajo);
-let barbaro = new Fighter("Barbaro", 52, 0.4, 6, 4, pinchaBarbaro, sacaDientes);
-let pistolero = new Fighter("Pistolero", 34, 0.4, 3, 2, culatazo, disparo);
-let guerrera = new Fighter("Guerrera", 60, 2, 9, 0.4, corte, golpeEscudo);
-
-
-//Mecánica de juego para dos jugagores
-/*
-function turnAttack(){
-
-    if(turn == 1){
-        setTimeout(()=>{
-        ladron.skill1(barbaro);
-        turn = 2;
-        //console.log(ladron.life);
-        console.log(barbaro.life);
-        const NombreBoton = document.getElementById("skill1").innerHTML = "puñalada";
-    }, 500);
-    }else{
-        setTimeout(()=>{
-        let skillArr = [this.skil1, this.skill2, this.skill3, this.skill4];
-        const random = Math.random() * (4 - 1 + 1);
-        //randomAttak = ()=> Math.floor(Math.random() * skillArr.length);
-        barbaro.skill1(ladron);
-        turn = 1;
-        console.log(ladron.life);
-        //console.log(barbaro.life);
-        //const NombreBoton = document.getElementById("skill1").innerHTML = this.skill1;
-        }, 500);
-    }
-}
-*/
-//const barra1= ()=> 15 = ((personaje[0].life * 100) /15) * 15;
+let ladron = new Fighter("Ladron", 156, 0.3, 20, 2, puñalada, golpeBajo);
+let barbaro = new Fighter("Barbaro", 152, 0.4, 27, 4, pinchaBarbaro, sacaDientes);
+let pistolero = new Fighter("Pistolero", 134, 0.4, 12, 2, culatazo, disparo);
+let guerrera = new Fighter("Guerrera", 160, 2, 46, 0.4, corte, golpeEscudo);
 
 // Mecanica para dos jugadores
 function turnAttack1(){
