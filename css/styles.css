@@ -32,3 +32,32 @@
     height: 5em;
     width: 5em;
 }
+#quePasa1{
+    height: 5em;
+    width: 15em;
+    background-color: coral;
+}
+#quePasa2{
+    height: 5em;
+    width: 15em;
+    background-color: bisque;
+}
+#quePasa1solo{
+    height: 2em;
+    width: 15em;
+    background-color: coral;
+}
+#queAtaque1solo{
+    height: 2em;
+    width: 15em;
+    background-color: turquoise;
+}
+#quePasa2solo{
+    height: 2em;
+    width: 15em;
+    background-color: red;
+}#queAtaque2solo{
+    height: 2em;
+    width: 15em;
+    background-color: turquoise;
+}
