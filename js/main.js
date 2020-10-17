@@ -10,7 +10,7 @@ segundaPantalla.style.display = 'none';
 pantalla1pj.style.display = 'none'
 terceraPantalla.style.display = 'none';
 
-
+ //const barraVida1 = document.getElementById('barraVida1');
 let turn = 1;
 
 
@@ -30,9 +30,8 @@ class Fighter{
         this.skill4 = skill4;
     }
 }
+
 //Selección de personaje
-
-
 
 let personajes = [];
 
@@ -40,7 +39,6 @@ function ladronPush(){
     personajes.push(ladron);
     let player1 = personajes[0];
     let player2 = personajes[1];
-    console.log('player1 ha elegido a' + personajes[0].name);
     if(personajes.length < 2){
         document.getElementById('barbaroCont').disabled = false;
         document.getElementById('ladronCont').disabled = false;
@@ -55,7 +53,6 @@ function ladronPush(){
     }
 function barbaroPush(){    
     personajes.push(barbaro);
-    console.log(personajes);
     let player1 = personajes[0];
     let player2 = personajes[1];
     if(personajes.length < 2){
@@ -72,7 +69,6 @@ function barbaroPush(){
   }
   function pistoleroPush(){    
     personajes.push(pistolero);
-    console.log(personajes);
     let player1 = personajes[0];
     let player2 = personajes[1];
     if(personajes.length < 2){
@@ -89,10 +85,8 @@ function barbaroPush(){
   }
   function guerreraPush(){    
     personajes.push(guerrera);
-    console.log(personajes);
     let player1 = personajes[0];
-    let player2 = personajes[1];
-    
+    let player2 = personajes[1]; 
     if(personajes.length < 2){      
         document.getElementById('barbaroCont').disabled = false;
         document.getElementById('ladronCont').disabled = false;
@@ -136,42 +130,58 @@ function sacaDientesBarbaro(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
     console.log(this.name + ' ha usado sacadientes en ' + enemy.name);
+    document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado sacadientes en ' + enemy.name);
+    document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado sacadientes en ' + enemy.name);    
 }
 function pinchaBarbaro(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
     console.log(this.name + ' ha usado mazazo en ' + enemy.name);
+    document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado mazazo en ' + enemy.name);
+    document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado mazazo en ' + enemy.name);
 }
 function golpeBajoLadron(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
     console.log(this.name + ' ha usado golpe bajo en ' + enemy.name);
+    document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado golpe bajo en ' + enemy.name);
+    document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado golpe bajo en ' + enemy.name);
 }
 
 function normalAttack(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
     console.log(this.name + ' ha usado puñalada en ' + enemy.name);
+    document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado puñalada en ' + enemy.name);
+    document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado puñalada en ' + enemy.name);
 }
 function culatazoPistolero(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
     console.log(this.name + ' ha usado culatazo en ' + enemy.name);
+    document.getElementById('queAtaque1solo').innerHTML = (this.name +  ' ha usado culatazo en ' + enemy.name);
+    document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado culatazo en ' + enemy.name);
 }
 function disparoPistolero(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
     console.log(this.name + ' ha usado disparo en ' + enemy.name);
+    document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado disparo en ' + enemy.name);
+    document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado disparo en ' + enemy.name);
 }
 function corteGuerrera(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
     console.log(this.name + ' ha usado corte en ' + enemy.name);
+    document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado corte en ' + enemy.name);
+    document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado corte en ' + enemy.name);
 }
 function golpeEscudoGuerrera(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
     console.log(this.name + ' ha usado golpe de escudo en ' + enemy.name);
+    document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado golpe de escudo en ' + enemy.name);
+    document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado golpe de escudo en ' + enemy.name);
 }
 let puñalada = normalAttack;
 let mazazo = pinchaBarbaro;
@@ -216,6 +226,8 @@ function turnAttack(){
     }
 }
 */
+//const barra1= ()=> 15 = ((personaje[0].life * 100) /15) * 15;
+
 // Mecanica para dos jugadores
 function turnAttack1(){
     if(personajes[0].life <= 0 || personajes[1].life <= 0){
@@ -231,6 +243,7 @@ function turnAttack1(){
             turn = 2;
             console.log(personajes[1].life);
             document.getElementById('quePasa1').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
+            //document.getElementById('barraVida1').style
             },5);
         }else{
             setTimeout(()=>{
@@ -258,13 +271,17 @@ function turnAttack2(){
             turn = 2;
             document.getElementById('quePasa1').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
             console.log(personajes[1].life);
+            longitudVida = ((personajes[1].life * 100) / 1000) * 1000;
+
             },1);
+            //longitudVida = ((vidaPersonajeActual x 100) / vidaPersonajeComienzo) x longitudVidaInicialv
         }else{
             setTimeout(()=>{
             personajes[1].skill2(personajes[0]);
             turn = 1;
             document.getElementById('quePasa2').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             console.log(personajes[0].life);
+            document.getElementById('barraVida1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             }, 1);
         }   
     }
@@ -272,7 +289,8 @@ function turnAttack2(){
 document.getElementById("skill2").addEventListener("click", turnAttack2);
 
 //Mecánica de juego para un jugador
-
+let vida1 = document.getElementById('barraVida1');
+let vida2 = document.getElementById('barraVida2');
 function turnoCorrido(){  
     
     if(personajes[0].life <= 0 || personajes[1].life <= 0){
@@ -282,14 +300,21 @@ function turnoCorrido(){
         segundaPantalla.style.display = 'none';
         pantalla1pj.style.display = 'none'
     }else {
+
         personajes[0].skill1(personajes[1]);
-        document.getElementById('quePasa1solo').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
+        document.getElementById('barraVida2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
         console.log( 'la vida del enemigo es: ' + personajes[1].life);
+        porcentajeVida2 = ((personajes[1].life * 10) / 10000) * 15;
+        vida2.style.width =  porcentajeVida2 + "em";
+
+
         setTimeout(()=>{
             personajes[1].skill1(personajes[0]);
-            document.getElementById('quePasa2solo').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             console.log('tu vida es: ' + personajes[0].life);
-        }, 5);
+            document.getElementById('barraVida1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
+            porcentajeVida1 = ((personajes[0].life * 10) / 10000) * 15;
+            vida1.style.width =  porcentajeVida1 + "em";
+        }, 1000);
     }
 }
 function turnoCorrido2(){  
@@ -303,14 +328,18 @@ function turnoCorrido2(){
         
     }else {
         personajes[0].skill2(personajes[1]);
-        document.getElementById('quePasa1solo').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
+        document.getElementById('barraVida2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
         
         console.log( 'la vida del enemigo es: ' + personajes[1].life);
+        porcentajeVida2 = ((personajes[1].life * 10) / 10000) * 15;
+        vida2.style.width =  porcentajeVida2 + "em";
         setTimeout(()=>{
             personajes[1].skill2(personajes[0]);
-            document.getElementById('quePasa2solo').innerHTML = ( 'tu vida es: ' + personajes[0].life);
+            document.getElementById('barraVida1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             console.log('tu vida es: ' + personajes[0].life);
-        }, 5);
+            porcentajeVida1 = ((personajes[0].life * 10) / 10000) * 15;
+            vida1.style.width =  porcentajeVida1 + "em";
+        }, 1000);
     }
 }
 document.getElementById("skill1solo").addEventListener("click", turnoCorrido);

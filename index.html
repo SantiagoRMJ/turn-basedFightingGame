@@ -10,7 +10,7 @@
 <body>
     
     <div id="primeraPantalla" style=" display: none; width: 100vw; height:100vh; background-color: gray;">
-        <div id="seleccionPj">player 1 seleccion de personaje</div>
+        <div id="seleccionPj">selecciona dos personajes</div>
         <button id="barbaroCont">barbaro</button>
         <button id="ladronCont">ladron</button>
         <button id="pistoleroCont">pistolero</button>
@@ -21,19 +21,25 @@
     </div>
     <div id="segundaPantalla" style=" display: none; width: 100vw; height:100vh; background-color: red;">
         <div id="quePasa1"></div>
+        <div id="queAtaque1"></div>
         <div id="quePasa2"></div>
+        <div id="queAtaque2"></div>
         <button id="skill1">ataque</button>
         <button id="skill2">ataque2</button>
     </div>  
     <div id="pantalla1pj" style=" display: none; width: 100vw; height:100vh; background-color: violet;">
-        <div id="quePasa1solo"></div>
+        <div id="quePasa1solo">
+            <div id="barraVida2"></div>
+        </div>
         <div id="queAtaque1solo"></div>
         <div id="quePasa2solo"></div>
-        <div id="queAtaque2solo"></div>
+        <div id="queAtaque2solo">
+            <div id="barraVida1"></div>
+        </div>
         <button id="skill1solo">ataque</button>
         <button id="skill2solo">ataque2</button>
     </div>
-    <div id="terceraPantalla" style=" width: 100px; height:100px; background-color: blue;"></div>
+    <div id="terceraPantalla" style=" width: 100vw; height:100vh; background-color: blue;"></div>
     <script src="./js/main.js"></script>
 </body>
 </html>

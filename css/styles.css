@@ -33,12 +33,12 @@
     width: 5em;
 }
 #quePasa1{
-    height: 5em;
+    height: 2em;
     width: 15em;
     background-color: coral;
 }
 #quePasa2{
-    height: 5em;
+    height: 2em;
     width: 15em;
     background-color: bisque;
 }
@@ -46,17 +46,44 @@
     height: 2em;
     width: 15em;
     background-color: coral;
+    border: 2px solid black;
 }
+#barraVida2{
+    height: 2em;
+    
+    background-color: greenyellow;
+}
+
 #queAtaque1solo{
+    height: 4em;
+    width: 30em;
+    background-color: turquoise;
+}
+#quePasa2solo{
+}
+
+
+
+#barraVida1{
+    height: 2em;
+    
+    background-color: greenyellow;
+}
+
+
+
+#queAtaque2solo{
+    height: 2em;
+    width: 15em;
+    background-color: red;
+    border: 2px solid black;
+}
+#queAtaque1{
     height: 2em;
     width: 15em;
     background-color: turquoise;
 }
-#quePasa2solo{
-    height: 2em;
-    width: 15em;
-    background-color: red;
-}#queAtaque2solo{
+#queAtaque2{
     height: 2em;
     width: 15em;
     background-color: turquoise;
