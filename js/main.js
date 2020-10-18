@@ -10,7 +10,8 @@ segundaPantalla.style.display = 'none';
 pantalla1pj.style.display = 'none'
 terceraPantalla.style.display = 'none';
 pantallaHasGanado.style.display = 'none';
- //const barraVida1 = document.getElementById('barraVida1');
+
+
 let turn = 1;
 
 
@@ -129,21 +130,18 @@ document.getElementById("unJugador").addEventListener("click", onePlayer);
 function sacaDientesBarbaro(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
-    console.log(this.name + ' ha usado sacadientes en ' + enemy.name);
     document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado sacadientes en ' + enemy.name);
     document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado sacadientes en ' + enemy.name);    
 }
 function pinchaBarbaro(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
-    console.log(this.name + ' ha usado mazazo en ' + enemy.name);
     document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado mazazo en ' + enemy.name);
     document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado mazazo en ' + enemy.name);
 }
 function golpeBajoLadron(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
-    console.log(this.name + ' ha usado golpe bajo en ' + enemy.name);
     document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado golpe bajo en ' + enemy.name);
     document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado golpe bajo en ' + enemy.name);
 }
@@ -151,35 +149,30 @@ function golpeBajoLadron(enemy){
 function normalAttack(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
-    console.log(this.name + ' ha usado puñalada en ' + enemy.name);
     document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado puñalada en ' + enemy.name);
     document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado puñalada en ' + enemy.name);
 }
 function culatazoPistolero(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
-    console.log(this.name + ' ha usado culatazo en ' + enemy.name);
     document.getElementById('queAtaque1solo').innerHTML = (this.name +  ' ha usado culatazo en ' + enemy.name);
     document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado culatazo en ' + enemy.name);
 }
 function disparoPistolero(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
-    console.log(this.name + ' ha usado disparo en ' + enemy.name);
     document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado disparo en ' + enemy.name);
     document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado disparo en ' + enemy.name);
 }
 function corteGuerrera(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
-    console.log(this.name + ' ha usado corte en ' + enemy.name);
     document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado corte en ' + enemy.name);
     document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado corte en ' + enemy.name);
 }
 function golpeEscudoGuerrera(enemy){
     let golpe = (this.attack - enemy.defense) * this.speed;
     enemy.life -= parseInt(golpe);
-    console.log(this.name + ' ha usado golpe de escudo en ' + enemy.name);
     document.getElementById('queAtaque1solo').innerHTML = ( this.name + ' ha usado golpe de escudo en ' + enemy.name);
     document.getElementById('queAtaque1').innerHTML = ( this.name + ' ha usado golpe de escudo en ' + enemy.name);
 }
@@ -221,24 +214,20 @@ function turnAttack1(){
             pantallaHasGanado.style.display = '';
           }else {
         if(turn == 1){
-            setTimeout(()=>{
             personajes[0].skill1(personajes[1]);
             turn = 2;
             document.getElementById('queAtaque2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
             porcentajeVida22player = ((personajes[1].life * 10) / 10000) * 15;
             vida22player.style.width =  porcentajeVida22player + "em";
-            },5);
         }else{
-            setTimeout(()=>{
             personajes[1].skill1(personajes[0]);
             turn = 1;
             document.getElementById('queAtaque1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             porcentajeVida12player = ((personajes[0].life * 10) / 10000) * 15;
             vida12player.style.width =  porcentajeVida12player + "em";
-            
-            }, 5);
-        }   
-    }
+        }
+        }       
+    
 }
 document.getElementById("skill1").addEventListener("click", turnAttack1);
 
@@ -259,21 +248,18 @@ function turnAttack2(){
             pantallaHasGanado.style.display = '';
           }else {
         if(turn == 1){
-            setTimeout(()=>{
             personajes[0].skill2(personajes[1]);
             turn = 2;
             document.getElementById('queAtaque2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
             porcentajeVida22player = ((personajes[1].life * 10) / 10000) * 15;
             vida22player.style.width =  porcentajeVida22player + "em";
-            },1);
+ 
         }else{
-            setTimeout(()=>{
             personajes[1].skill2(personajes[0]);
             turn = 1;
             document.getElementById('queAtaque1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             porcentajeVida12player = ((personajes[0].life * 10) / 10000) * 15;
-            vida12player.style.width =  porcentajeVida12player + "em";
-            }, 1);
+            vida12player.style.width =  porcentajeVida12player + "em";           
         }   
     }
 }
@@ -303,14 +289,10 @@ function turnoCorrido(){
 
         personajes[0].skill1(personajes[1]);
         document.getElementById('barraVida2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
-        console.log( 'la vida del enemigo es: ' + personajes[1].life);
         porcentajeVida2 = ((personajes[1].life * 10) / 10000) * 15;
         vida2.style.width =  porcentajeVida2 + "em";
-
-
         setTimeout(()=>{
             personajes[1].skill1(personajes[0]);
-            console.log('tu vida es: ' + personajes[0].life);
             document.getElementById('barraVida1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             porcentajeVida1 = ((personajes[0].life * 10) / 10000) * 15;
             vida1.style.width =  porcentajeVida1 + "em";
@@ -348,11 +330,6 @@ function turnoCorrido2(){
 }
 document.getElementById("skill1solo").addEventListener("click", turnoCorrido);
 document.getElementById("skill2solo").addEventListener("click", turnoCorrido2);
-
-
-
-
-
 
 /////////////////////////////////////////////////////////////
 
