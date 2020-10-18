@@ -3,13 +3,13 @@ const primeraPantalla = document.getElementById('primeraPantalla');
 const segundaPantalla = document.getElementById('segundaPantalla');
 const terceraPantalla = document.getElementById('terceraPantalla');
 const pantalla1pj = document.getElementById('pantalla1pj');
-
+const pantallaHasGanado = document.getElementById('pantallaHasGanado');
 
 primeraPantalla.style.display = '';
 segundaPantalla.style.display = 'none';
 pantalla1pj.style.display = 'none'
 terceraPantalla.style.display = 'none';
-
+pantallaHasGanado.style.display = 'none';
  //const barraVida1 = document.getElementById('barraVida1');
 let turn = 1;
 
@@ -200,28 +200,42 @@ let pistolero = new Fighter("Pistolero", 134, 0.4, 12, 2, culatazo, disparo);
 let guerrera = new Fighter("Guerrera", 160, 2, 46, 0.4, corte, golpeEscudo);
 
 // Mecanica para dos jugadores
+
+let vida12player = document.getElementById('barraVida2players1');
+let vida22player = document.getElementById('barraVida2players2');
+ 
 function turnAttack1(){
-    if(personajes[0].life <= 0 || personajes[1].life <= 0){
+    if(personajes[0].life <= 0){
         segundaPantalla.style.display = 'none';
         terceraPantalla.style.display = '';
         primeraPantalla.style.display = 'none';
         segundaPantalla.style.display = 'none';
         pantalla1pj.style.display = 'none'
-    }else {
+    }
+        else if(personajes[1].life <= 0) {
+            segundaPantalla.style.display = 'none';
+            terceraPantalla.style.display = 'none';
+            primeraPantalla.style.display = 'none';
+            segundaPantalla.style.display = 'none';
+            pantalla1pj.style.display = 'none'
+            pantallaHasGanado.style.display = '';
+          }else {
         if(turn == 1){
             setTimeout(()=>{
             personajes[0].skill1(personajes[1]);
             turn = 2;
-            console.log(personajes[1].life);
-            document.getElementById('quePasa1').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
-            //document.getElementById('barraVida1').style
+            document.getElementById('queAtaque2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
+            porcentajeVida22player = ((personajes[1].life * 10) / 10000) * 15;
+            vida22player.style.width =  porcentajeVida22player + "em";
             },5);
         }else{
             setTimeout(()=>{
             personajes[1].skill1(personajes[0]);
             turn = 1;
-            document.getElementById('quePasa2').innerHTML = ( 'tu vida es: ' + personajes[0].life);
-            console.log(personajes[0].life);
+            document.getElementById('queAtaque1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
+            porcentajeVida12player = ((personajes[0].life * 10) / 10000) * 15;
+            vida12player.style.width =  porcentajeVida12player + "em";
+            
             }, 5);
         }   
     }
@@ -229,30 +243,36 @@ function turnAttack1(){
 document.getElementById("skill1").addEventListener("click", turnAttack1);
 
 function turnAttack2(){
-    if(personajes[0].life <= 0 || personajes[1].life <= 0){
+    if(personajes[0].life <= 0){
         segundaPantalla.style.display = 'none';
         terceraPantalla.style.display = '';
         primeraPantalla.style.display = 'none';
         segundaPantalla.style.display = 'none';
         pantalla1pj.style.display = 'none'
-    }else {
+    }
+        else if(personajes[1].life <= 0) {
+            segundaPantalla.style.display = 'none';
+            terceraPantalla.style.display = 'none';
+            primeraPantalla.style.display = 'none';
+            segundaPantalla.style.display = 'none';
+            pantalla1pj.style.display = 'none'
+            pantallaHasGanado.style.display = '';
+          }else {
         if(turn == 1){
             setTimeout(()=>{
             personajes[0].skill2(personajes[1]);
             turn = 2;
-            document.getElementById('quePasa1').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
-            console.log(personajes[1].life);
-            longitudVida = ((personajes[1].life * 100) / 1000) * 1000;
-
+            document.getElementById('queAtaque2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
+            porcentajeVida22player = ((personajes[1].life * 10) / 10000) * 15;
+            vida22player.style.width =  porcentajeVida22player + "em";
             },1);
-            //longitudVida = ((vidaPersonajeActual x 100) / vidaPersonajeComienzo) x longitudVidaInicialv
         }else{
             setTimeout(()=>{
             personajes[1].skill2(personajes[0]);
             turn = 1;
-            document.getElementById('quePasa2').innerHTML = ( 'tu vida es: ' + personajes[0].life);
-            console.log(personajes[0].life);
-            document.getElementById('barraVida1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
+            document.getElementById('queAtaque1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
+            porcentajeVida12player = ((personajes[0].life * 10) / 10000) * 15;
+            vida12player.style.width =  porcentajeVida12player + "em";
             }, 1);
         }   
     }
@@ -260,17 +280,26 @@ function turnAttack2(){
 document.getElementById("skill2").addEventListener("click", turnAttack2);
 
 //Mecánica de juego para un jugador
+
 let vida1 = document.getElementById('barraVida1');
 let vida2 = document.getElementById('barraVida2');
 function turnoCorrido(){  
     
-    if(personajes[0].life <= 0 || personajes[1].life <= 0){
+    if(personajes[0].life <= 0){
         segundaPantalla.style.display = 'none';
         terceraPantalla.style.display = '';
         primeraPantalla.style.display = 'none';
         segundaPantalla.style.display = 'none';
         pantalla1pj.style.display = 'none'
-    }else {
+    }
+        else if(personajes[1].life <= 0) {
+            segundaPantalla.style.display = 'none';
+            terceraPantalla.style.display = 'none';
+            primeraPantalla.style.display = 'none';
+            segundaPantalla.style.display = 'none';
+            pantalla1pj.style.display = 'none'
+            pantallaHasGanado.style.display = '';
+          }else {
 
         personajes[0].skill1(personajes[1]);
         document.getElementById('barraVida2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
@@ -290,24 +319,28 @@ function turnoCorrido(){
 }
 function turnoCorrido2(){  
     
-    if(personajes[0].life <= 0 || personajes[1].life <= 0){
+    if(personajes[0].life <= 0){
         segundaPantalla.style.display = 'none';
         terceraPantalla.style.display = '';
         primeraPantalla.style.display = 'none';
         segundaPantalla.style.display = 'none';
         pantalla1pj.style.display = 'none'
-        
-    }else {
+    }
+        else if(personajes[1].life <= 0) {
+            segundaPantalla.style.display = 'none';
+            terceraPantalla.style.display = 'none';
+            primeraPantalla.style.display = 'none';
+            segundaPantalla.style.display = 'none';
+            pantalla1pj.style.display = 'none'
+            pantallaHasGanado.style.display = '';
+          }else {
         personajes[0].skill2(personajes[1]);
-        document.getElementById('barraVida2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
-        
-        console.log( 'la vida del enemigo es: ' + personajes[1].life);
+        document.getElementById('barraVida2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);       
         porcentajeVida2 = ((personajes[1].life * 10) / 10000) * 15;
         vida2.style.width =  porcentajeVida2 + "em";
         setTimeout(()=>{
             personajes[1].skill2(personajes[0]);
             document.getElementById('barraVida1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
-            console.log('tu vida es: ' + personajes[0].life);
             porcentajeVida1 = ((personajes[0].life * 10) / 10000) * 15;
             vida1.style.width =  porcentajeVida1 + "em";
         }, 1000);

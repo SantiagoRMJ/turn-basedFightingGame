@@ -35,12 +35,24 @@
 #quePasa1{
     height: 2em;
     width: 15em;
-    background-color: coral;
+    background-color: red;
+    border: 2px solid black;
+}
+#barraVida2players1{
+    height: 2em;
+    
+    background-color: greenyellow;
+}
+#barraVida2players2{
+    height: 2em;
+    
+    background-color: greenyellow;
 }
 #quePasa2{
     height: 2em;
     width: 15em;
-    background-color: bisque;
+    background-color: red;
+    border: 2px solid black;
 }
 #quePasa1solo{
     height: 2em;
@@ -87,4 +99,9 @@
     height: 2em;
     width: 15em;
     background-color: turquoise;
+}
+#pantallaHasGanado{
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
 }
