@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>let´s fight!</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     
 </head>
 <body>
@@ -21,20 +21,40 @@
     </div>
 
 
-    <div id="segundaPantalla" style=" display: none; width: 100vw; height:100vh; background-color: red;">
-        <div id="quePasa1">
-            <div id="barraVida2players2"></div>
+    <div id="segundaPantalla" style=" display: none; width: 100vw; height:100vh; background-color: rgb(146, 110, 110);">
+
+        <div id="segundaPantallaSuperior">
+            <div id="superiorDerecha2">
+                <div id="cuantaVida2"></div>
+                <div id="quePasa2">
+                    <div id="barraVida2players1"></div>
+                </div>
+            </div>
+        
+           
+            <div id="superiorIzquierda2">  
+               
+                <div id="cuantaVida1"></div>
+                <div id="quePasa1">
+                    <div id="barraVida2players2"></div>
+                </div>
+            </div>
         </div>
 
-        <div id="queAtaque1"></div>
-        <div id="quePasa2">
-            <div id="barraVida2players1"></div>
+        <div id="contFotos2">
+            <div id="fotoP11"></div>
+            <div id="fotoP22"></div>
         </div>
 
-        <div id="queAtaque2"></div>
 
-        <button id="skill1">ataque</button>
-        <button id="skill2">ataque2</button>
+        <div id="contButtons2">
+            <button id="skill1">ataque</button>
+            <button id="skill2">ataque2</button>
+        </div>  
+        <div id="contComent2">
+            <div id="queAtaque1"></div>
+        </div>
+        
     </div>  
 
 
@@ -50,6 +70,8 @@
         <button id="skill1solo">ataque</button>
         <button id="skill2solo">ataque2</button>
     </div>
+
+
     <div id="terceraPantalla" style=" width: 100vw; height:100vh; background-color: blue;">
         <div>has perdido</div>
     </div>

@@ -190,13 +190,13 @@ function turnAttack1(){
         if(turn == 1){
             personajes[0].skill1(personajes[1]);
             turn = 2;
-            document.getElementById('queAtaque2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
+            document.getElementById('cuantaVida1').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
             porcentajeVida22player = ((personajes[1].life * 10) / 10000) * 15;
             vida22player.style.width =  porcentajeVida22player + "em";
         }else{
             personajes[1].skill1(personajes[0]);
             turn = 1;
-            document.getElementById('queAtaque1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
+            document.getElementById('cuantaVida2').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             porcentajeVida12player = ((personajes[0].life * 10) / 10000) * 15;
             vida12player.style.width =  porcentajeVida12player + "em";
         }
@@ -224,14 +224,14 @@ function turnAttack2(){
         if(turn == 1){
             personajes[0].skill2(personajes[1]);
             turn = 2;
-            document.getElementById('queAtaque2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
+            document.getElementById('cuantaVida1').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
             porcentajeVida22player = ((personajes[1].life * 10) / 10000) * 15;
             vida22player.style.width =  porcentajeVida22player + "em";
  
         }else{
             personajes[1].skill2(personajes[0]);
             turn = 1;
-            document.getElementById('queAtaque1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
+            document.getElementById('cuantaVida2').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             porcentajeVida12player = ((personajes[0].life * 10) / 10000) * 15;
             vida12player.style.width =  porcentajeVida12player + "em";           
         }   
