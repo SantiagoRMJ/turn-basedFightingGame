@@ -5,28 +5,38 @@
     background: url(/img/fondoSeleccion.gif) no-repeat center/cover;
 }
 #segundaPantalla{
+    background: url(/img/fondoPelea.gif) no-repeat center/cover;
+}
+#pantalla1pj{
     background: url(/img/fondo2pantalla.gif) no-repeat center/cover;
+}
+#terceraPantalla{
+    background: url(/img/derrota.gif) no-repeat center/cover;
+}
+#pantallaHasGanado{
+    background: url(/img/victoria.gif) no-repeat center/cover;
 }
 
 #barbaroCont{
-    height: 5em;
-    width: 5em;
-    background-color: aqua;
+    height: 30em;
+    width: 20em;
+    background: url(/img/barbaro.png)no-repeat center/cover;
 }
 #ladronCont{
-    height: 5em;
-    width: 5em;
-    background-color: red;
+    height: 30em;
+    width: 20em;
+    background: url(/img/ladron.png) no-repeat center/cover;
 }
 #pistoleroCont{
-    height: 5em;
-    width: 5em;
-    background-color: blue;
+    height: 30em;
+    width: 20em;
+    background: url(/img/pistolero.png) no-repeat center/cover;
 }
 #guerreraCont{
-    height: 5em;
-    width: 5em;
-    background-color: greenyellow;
+    height: 30em;
+    width: 20em;
+    background: url(/img/warrior.png) no-repeat center/cover;
+
 }
 #skill1{
     height: 5em;
@@ -78,8 +88,10 @@
     height: 4em;
     width: 30em;
     background-color: turquoise;
+    
 }
 #quePasa2solo{
+  
 }
 
 
