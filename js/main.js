@@ -36,10 +36,7 @@ class Fighter{
 
 let personajes = [];
 
-function ladronPush(){
-    personajes.push(ladron);
-    let player1 = personajes[0];
-    let player2 = personajes[1];
+function arrMax(){
     if(personajes.length < 2){
         document.getElementById('barbaroCont').disabled = false;
         document.getElementById('ladronCont').disabled = false;
@@ -51,54 +48,31 @@ function ladronPush(){
         document.getElementById('pistoleroCont').disabled = true;
         document.getElementById('guerreraCont').disabled = true;
       }
+}
+
+function ladronPush(){
+    personajes.push(ladron);
+    let player1 = personajes[0];
+    let player2 = personajes[1];
+    arrMax();
     }
 function barbaroPush(){    
     personajes.push(barbaro);
     let player1 = personajes[0];
     let player2 = personajes[1];
-    if(personajes.length < 2){
-        document.getElementById('barbaroCont').disabled = false;
-        document.getElementById('ladronCont').disabled = false;
-        document.getElementById('pistoleroCont').disabled = false;
-        document.getElementById('guerreraCont').disabled = false;
-      }if(personajes.length == 2){
-        document.getElementById('barbaroCont').disabled = true;
-        document.getElementById('ladronCont').disabled = true;
-        document.getElementById('pistoleroCont').disabled = true;
-        document.getElementById('guerreraCont').disabled = true;
-      }
+    arrMax();
   }
   function pistoleroPush(){    
     personajes.push(pistolero);
     let player1 = personajes[0];
     let player2 = personajes[1];
-    if(personajes.length < 2){
-        document.getElementById('barbaroCont').disabled = false;
-        document.getElementById('ladronCont').disabled = false;
-        document.getElementById('pistoleroCont').disabled = false;
-        document.getElementById('guerreraCont').disabled = false;
-      }if(personajes.length == 2){
-        document.getElementById('barbaroCont').disabled = true;
-        document.getElementById('ladronCont').disabled = true;
-        document.getElementById('pistoleroCont').disabled = true;
-        document.getElementById('guerreraCont').disabled = true;
-      }
+    arrMax();
   }
   function guerreraPush(){    
     personajes.push(guerrera);
     let player1 = personajes[0];
     let player2 = personajes[1]; 
-    if(personajes.length < 2){      
-        document.getElementById('barbaroCont').disabled = false;
-        document.getElementById('ladronCont').disabled = false;
-        document.getElementById('pistoleroCont').disabled = false;
-        document.getElementById('guerreraCont').disabled = false;
-      }if(personajes.length == 2){
-        document.getElementById('barbaroCont').disabled = true;
-        document.getElementById('ladronCont').disabled = true;
-        document.getElementById('pistoleroCont').disabled = true;
-        document.getElementById('guerreraCont').disabled = true;
-      }
+    arrMax();
   }
   
 
@@ -269,6 +243,8 @@ document.getElementById("skill2").addEventListener("click", turnAttack2);
 
 let vida1 = document.getElementById('barraVida1');
 let vida2 = document.getElementById('barraVida2');
+
+let botonTurnoCorrido1 = document.getElementById("skill1solo");
 function turnoCorrido(){  
     
     if(personajes[0].life <= 0){
@@ -286,21 +262,25 @@ function turnoCorrido(){
             pantalla1pj.style.display = 'none'
             pantallaHasGanado.style.display = '';
           }else {
-
         personajes[0].skill1(personajes[1]);
         document.getElementById('barraVida2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);
         porcentajeVida2 = ((personajes[1].life * 10) / 10000) * 15;
         vida2.style.width =  porcentajeVida2 + "em";
+        botonTurnoCorrido1.disabled = true;
+        botonTurnoCorrido2.disabled = true;
         setTimeout(()=>{
             personajes[1].skill1(personajes[0]);
             document.getElementById('barraVida1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             porcentajeVida1 = ((personajes[0].life * 10) / 10000) * 15;
             vida1.style.width =  porcentajeVida1 + "em";
+            botonTurnoCorrido1.disabled = false;
+            botonTurnoCorrido2.disabled = false;
         }, 1000);
     }
 }
-function turnoCorrido2(){  
-    
+
+let botonTurnoCorrido2 = document.getElementById("skill2solo");
+function turnoCorrido2(){     
     if(personajes[0].life <= 0){
         segundaPantalla.style.display = 'none';
         terceraPantalla.style.display = '';
@@ -320,11 +300,16 @@ function turnoCorrido2(){
         document.getElementById('barraVida2').innerHTML = ( 'la vida del enemigo es: ' + personajes[1].life);       
         porcentajeVida2 = ((personajes[1].life * 10) / 10000) * 15;
         vida2.style.width =  porcentajeVida2 + "em";
+        botonTurnoCorrido1.disabled = true;
+        botonTurnoCorrido2.disabled = true;
         setTimeout(()=>{
             personajes[1].skill2(personajes[0]);
             document.getElementById('barraVida1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             porcentajeVida1 = ((personajes[0].life * 10) / 10000) * 15;
             vida1.style.width =  porcentajeVida1 + "em";
+            
+            botonTurnoCorrido1.disabled = false;
+            botonTurnoCorrido2.disabled = false;
         }, 1000);
     }
 }
