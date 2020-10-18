@@ -2,6 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: url(/img/fondoSeleccion.gif) no-repeat center/cover;
+}
+#segundaPantalla{
+    background: url(/img/fondo2pantalla.gif) no-repeat center/cover;
 }
 
 #barbaroCont{
@@ -106,14 +110,18 @@
     width: 100vw;
     background-color: red;
 }
+/*********************************************
+**********************************************
+************PANTALLA DOS PLAYERS*************
+*********************************************
+**********************************************/
 
 #segundaPantallaSuperior{
     width: 100vw;
-    height: 10em;
+    height: 7em;
     display: flex;
     justify-content: space-around;
-    align-items: center;
-    
+    align-items: center;    
 }
 #cuantaVida1{
     height: 1em;
@@ -127,14 +135,25 @@
 }
 #contFotos2{
     width: 100vw;
-    height: 10em;
+    height: 20em;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+#fotoP11{
+    height: 20em;
+    width: 15em;
+    background-color: blue;
+}
+#fotoP22{
+    height: 20em;
+    width: 15em;
+    background-color: blue;
+}
+
 #contButtons2{
     width: 100vw;
-    height: 10em;
+    height: 7em;
     display: flex;
     justify-content: center;
     align-items: center;
