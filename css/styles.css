@@ -158,12 +158,11 @@
 #fotoP11{
     height: 20em;
     width: 15em;
-    background-color: blue;
+   
 }
 #fotoP22{
     height: 20em;
     width: 15em;
-    background-color: blue;
 }
 
 #contButtons2{
@@ -183,9 +182,11 @@
 #queAtaque1{
     height: 100%;
     width: 80%;
-    background-color: turquoise;
+    background-color: rgb(82, 10, 13);
     border: 5px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 40px;
+    color: rgb(160, 161, 49);
 }

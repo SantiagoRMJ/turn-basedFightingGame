@@ -52,34 +52,63 @@ function arrMax(){
       }
 }
 let imagenP1 = document.getElementById('fotoP11');
-let imagenP2 = document.getElementById('fotoP21');
+let imagenP2 = document.getElementById('fotoP22');
+
 function ladronPush(){
     personajes.push(ladron);
     let player1 = personajes[0];
     let player2 = personajes[1];
-    if (ladron = personajes[0]) {
-        imagenP1.InnerHTML = '<img src="./img/ladron.png"></img>';
-    }else if (ladron = personajes[1]){
-        imagenP2.InnerHTML = '<img src=“./img/ladron.png”></img>';
-    }
+   if (personajes[0] == ladron){
+    imagenP1.innerHTML = '<img src = "/img/ThethiefR.png">';
+    }else if(personajes[1] == ladron){
+    document.getElementById('fotoP22').innerHTML = '<img src = "/img/ThethiefR.png">';
+    }else if(personajes[0] == ladron && personajes[1] == ladron){
+    document.getElementById('fotoP11').innerHTML = '<img src = "/img/ThethiefR.png">';
+    document.getElementById('fotoP22').innerHTML = '<img src = "/img/ThethiefR.png">';
+   }
     arrMax();
 }
 function barbaroPush(){    
     personajes.push(barbaro);
     let player1 = personajes[0];
     let player2 = personajes[1];
+    if (personajes[0] == barbaro){
+        imagenP1.innerHTML = '<img src = "./img/THEBARBARIANr.png">';
+        }else if(personajes[1] == barbaro){
+        imagenP2.innerHTML = '<img src = "/img/THEBARBARIANr.png">';
+        }else if(personajes[0] == barbaro && personajes[1] == barbaro){
+        imagenP1.innerHTML = '<img src = "/img/THEBARBARIANr.png">';
+        document.getElementById('fotoP22').innerHTML = '<img src = "/img/THEBARBARIANr.png">';
+       }
     arrMax();
   }
   function pistoleroPush(){    
     personajes.push(pistolero);
     let player1 = personajes[0];
     let player2 = personajes[1];
+    if (personajes[0] == pistolero){
+        imagenP1.innerHTML = '<img src = "/img/THEGUNMANr.png">';
+        }else if(personajes[1] == pistolero){
+        imagenP2.innerHTML = '<img src = "/img/THEGUNMANr.png">';
+        }else if(personajes[0] == pistolero && personajes[1] == pistolero){
+        imagenP1.innerHTML = '<img src = "/img/THEGUNMANr.png">';
+        document.getElementById('fotoP22').innerHTML = '<img src = "/img/THEGUNMANr.png">';
+       }
     arrMax();
+    
   }
   function guerreraPush(){    
     personajes.push(guerrera);
     let player1 = personajes[0];
     let player2 = personajes[1]; 
+    if (personajes[0] == guerrera){
+        imagenP1.innerHTML = '<img src = "/img/THEWARRIORr.png">';
+        }else if(personajes[1] == guerrera){
+        imagenP2.innerHTML = '<img src = "/img/THEWARRIORr.png">';
+        }else if(personajes[0] == guerrera && personajes[1] == guerrera){
+        imagenP1.innerHTML = '<img src = "/img/THEWARRIORr.png">';
+        document.getElementById('fotoP22').innerHTML = '<img src = "/img/THEWARRIORr.png">';
+       }
     arrMax();
   }
   
