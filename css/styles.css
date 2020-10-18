@@ -12,15 +12,28 @@
 }
 #terceraPantalla{
     background: url(/img/derrota.gif) no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 140px;
+    color:rgb(160, 161, 49);
+    font-family: 'Trade Winds', cursive;
 }
 #pantallaHasGanado{
     background: url(/img/victoria.gif) no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 140px;
+    color:turquoise;
+    font-family: 'Trade Winds', cursive;
 }
 
 #barbaroCont{
     height: 30em;
     width: 20em;
     background: url(/img/barbaro.png)no-repeat center/cover;
+    margin: 10px;
 }
 #ladronCont{
     height: 30em;
@@ -31,6 +44,7 @@
     height: 30em;
     width: 20em;
     background: url(/img/pistolero.png) no-repeat center/cover;
+    margin: 10px;
 }
 #guerreraCont{
     height: 30em;
@@ -38,14 +52,7 @@
     background: url(/img/warrior.png) no-repeat center/cover;
 
 }
-#skill1{
-    height: 5em;
-    width: 5em;
-}
-#skill2{
-    height: 5em;
-    width: 5em;
-}
+
 
 #barraVida2players1{
     height: 2em;
@@ -120,33 +127,35 @@
     width: 100vw;
     height: 7em;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;    
 }
 #quePasa1{
     height: 2em;
     width: 15em;
-    
     background-color: red;
+    margin-right: 5em;
     border: 2px solid black;
 }
 #cuantaVida1{
     height: 1em;
     width: 15em;
-    
+    color: rgb(160, 161, 49);
+    font-family: 'Trade Winds', cursive;
 }
 #quePasa2{
     height: 2em;
     width: 15em;
-    display: flex;
-    justify-content: flex-end;
     background-color: red;
+    margin-left: 5em;
     border: 2px solid black;
 }
 #cuantaVida2{
     height: 1em;
     width: 15em;
-    
+    color: rgb(160, 161, 49);
+    font-family: 'Trade Winds', cursive;
+    margin-left: 5em;
 }
 #contFotos2{
     width: 100vw;
@@ -189,4 +198,23 @@
     align-items: center;
     font-size: 40px;
     color: rgb(160, 161, 49);
+    font-family: 'Trade Winds', cursive;
+}
+#skill1{
+    height: 5em;
+    width: 5em;
+    background-color: rgb(26, 80, 26);
+    color: rgb(160, 161, 49);
+    font-family: 'Trade Winds', cursive;
+    border: 3px solid yellow;
+    border-radius: 20%;
+}
+#skill2{
+    height: 5em;
+    width: 5em;
+    background-color: rgb(26, 80, 26);
+    color: rgb(160, 161, 49);
+    font-family: 'Trade Winds', cursive;
+    border: 3px solid yellow;
+    border-radius: 20%;
 }

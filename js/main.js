@@ -67,6 +67,7 @@ function ladronPush(){
     document.getElementById('fotoP22').innerHTML = '<img src = "/img/ThethiefR.png">';
    }
     arrMax();
+
 }
 function barbaroPush(){    
     personajes.push(barbaro);
