@@ -46,13 +46,7 @@
     height: 5em;
     width: 5em;
 }
-#quePasa1{
-    height: 2em;
-    width: 15em;
-    
-    background-color: red;
-    border: 2px solid black;
-}
+
 #barraVida2players1{
     height: 2em;
     
@@ -64,13 +58,7 @@
     background-color: greenyellow;
 }
 
-#quePasa2{
-    height: 2em;
-    width: 15em;
-   
-    background-color: red;
-    border: 2px solid black;
-}
+
 #quePasa1solo{
     height: 2em;
     width: 15em;
@@ -132,13 +120,28 @@
     width: 100vw;
     height: 7em;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;    
+}
+#quePasa1{
+    height: 2em;
+    width: 15em;
+    
+    background-color: red;
+    border: 2px solid black;
 }
 #cuantaVida1{
     height: 1em;
     width: 15em;
     
+}
+#quePasa2{
+    height: 2em;
+    width: 15em;
+    display: flex;
+    justify-content: flex-end;
+    background-color: red;
+    border: 2px solid black;
 }
 #cuantaVida2{
     height: 1em;

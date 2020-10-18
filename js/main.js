@@ -36,8 +36,10 @@ class Fighter{
 
 let personajes = [];
 
+
 function arrMax(){
     if(personajes.length < 2){
+        
         document.getElementById('barbaroCont').disabled = false;
         document.getElementById('ladronCont').disabled = false;
         document.getElementById('pistoleroCont').disabled = false;
@@ -49,13 +51,19 @@ function arrMax(){
         document.getElementById('guerreraCont').disabled = true;
       }
 }
-
+let imagenP1 = document.getElementById('fotoP11');
+let imagenP2 = document.getElementById('fotoP21');
 function ladronPush(){
     personajes.push(ladron);
     let player1 = personajes[0];
     let player2 = personajes[1];
-    arrMax();
+    if (ladron = personajes[0]) {
+        imagenP1.InnerHTML = '<img src="./img/ladron.png"></img>';
+    }else if (ladron = personajes[1]){
+        imagenP2.InnerHTML = '<img src=“./img/ladron.png”></img>';
     }
+    arrMax();
+}
 function barbaroPush(){    
     personajes.push(barbaro);
     let player1 = personajes[0];
@@ -83,7 +91,8 @@ document.getElementById("guerreraCont").addEventListener("click", guerreraPush);
 
 ///////////////////////////////////////////////////////////////////////////////////
 // funciones de los tipos de juego
-function twoPlayers(){   
+
+function twoPlayers(){  
         primeraPantalla.style.display = 'none';
         segundaPantalla.style.display = '';
     }
@@ -161,17 +170,18 @@ let golpeEscudo = golpeEscudoGuerrera;
 
 //defino a los personajes
 
-let ladron = new Fighter("Ladron", 156, 0.3, 20, 2, puñalada, golpeBajo);
-let barbaro = new Fighter("Barbaro", 152, 0.4, 27, 4, pinchaBarbaro, sacaDientes);
-let pistolero = new Fighter("Pistolero", 134, 0.4, 12, 2, culatazo, disparo);
-let guerrera = new Fighter("Guerrera", 160, 2, 46, 0.4, corte, golpeEscudo);
+let ladron = new Fighter("Ladron", 156, 0.3, 20, 2, puñalada, golpeBajo, 'url(/img/ladron.png) no-repeat center/cover;');
+let barbaro = new Fighter("Barbaro", 152, 0.4, 27, 4, pinchaBarbaro, sacaDientes, 'url(/img/barbaro.png)no-repeat center/cover;');
+let pistolero = new Fighter("Pistolero", 134, 0.4, 12, 2, culatazo, disparo, 'url(/img/pistolero.png) no-repeat center/cover;');
+let guerrera = new Fighter("Guerrera", 160, 2, 46, 0.4, corte, golpeEscudo, 'url(/img/warrior.png) no-repeat center/cover;');
 
 // Mecanica para dos jugadores
 
 let vida12player = document.getElementById('barraVida2players1');
 let vida22player = document.getElementById('barraVida2players2');
- 
+
 function turnAttack1(){
+    
     if(personajes[0].life <= 0){
         segundaPantalla.style.display = 'none';
         terceraPantalla.style.display = '';
