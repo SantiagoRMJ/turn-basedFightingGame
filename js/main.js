@@ -38,8 +38,7 @@ let personajes = [];
 
 
 function arrMax(){
-    if(personajes.length < 2){
-        
+    if(personajes.length < 2){       
         document.getElementById('barbaroCont').disabled = false;
         document.getElementById('ladronCont').disabled = false;
         document.getElementById('pistoleroCont').disabled = false;
@@ -76,10 +75,10 @@ function barbaroPush(){
     if (personajes[0] == barbaro){
         imagenP1.innerHTML = '<img src = "./img/THEBARBARIANr.png">';
         }else if(personajes[1] == barbaro){
-        imagenP2.innerHTML = '<img src = "/img/THEBARBARIANr.png">';
+        imagenP2.innerHTML = '<img src = "./img/THEBARBARIANr.png">';
         }else if(personajes[0] == barbaro && personajes[1] == barbaro){
-        imagenP1.innerHTML = '<img src = "/img/THEBARBARIANr.png">';
-        document.getElementById('fotoP22').innerHTML = '<img src = "/img/THEBARBARIANr.png">';
+        imagenP1.innerHTML = '<img src = "./img/THEBARBARIANr.png">';
+        document.getElementById('fotoP22').innerHTML = '<img src = "./img/THEBARBARIANr.png">';
        }
     arrMax();
   }
@@ -88,12 +87,12 @@ function barbaroPush(){
     let player1 = personajes[0];
     let player2 = personajes[1];
     if (personajes[0] == pistolero){
-        imagenP1.innerHTML = '<img src = "/img/THEGUNMANr.png">';
+        imagenP1.innerHTML = '<img src = "./img/THEGUNMANr.png">';
         }else if(personajes[1] == pistolero){
-        imagenP2.innerHTML = '<img src = "/img/THEGUNMANr.png">';
+        imagenP2.innerHTML = '<img src = "./img/THEGUNMANr.png">';
         }else if(personajes[0] == pistolero && personajes[1] == pistolero){
-        imagenP1.innerHTML = '<img src = "/img/THEGUNMANr.png">';
-        document.getElementById('fotoP22').innerHTML = '<img src = "/img/THEGUNMANr.png">';
+        imagenP1.innerHTML = '<img src = "./img/THEGUNMANr.png">';
+        document.getElementById('fotoP22').innerHTML = '<img src = "./img/THEGUNMANr.png">';
        }
     arrMax();
     
@@ -103,12 +102,12 @@ function barbaroPush(){
     let player1 = personajes[0];
     let player2 = personajes[1]; 
     if (personajes[0] == guerrera){
-        imagenP1.innerHTML = '<img src = "/img/THEWARRIORr.png">';
+        imagenP1.innerHTML = '<img src = "./img/THEWARRIORr.png">';
         }else if(personajes[1] == guerrera){
-        imagenP2.innerHTML = '<img src = "/img/THEWARRIORr.png">';
+        imagenP2.innerHTML = '<img src = "./img/THEWARRIORr.png">';
         }else if(personajes[0] == guerrera && personajes[1] == guerrera){
-        imagenP1.innerHTML = '<img src = "/img/THEWARRIORr.png">';
-        document.getElementById('fotoP22').innerHTML = '<img src = "/img/THEWARRIORr.png">';
+        imagenP1.innerHTML = '<img src = "./img/THEWARRIORr.png">';
+        document.getElementById('fotoP22').innerHTML = '<img src = "./img/THEWARRIORr.png">';
        }
     arrMax();
   }
@@ -346,8 +345,7 @@ function turnoCorrido2(){
             personajes[1].skill2(personajes[0]);
             document.getElementById('barraVida1').innerHTML = ( 'tu vida es: ' + personajes[0].life);
             porcentajeVida1 = ((personajes[0].life * 10) / 10000) * 15;
-            vida1.style.width =  porcentajeVida1 + "em";
-            
+            vida1.style.width =  porcentajeVida1 + "em";            
             botonTurnoCorrido1.disabled = false;
             botonTurnoCorrido2.disabled = false;
         }, 1000);

@@ -2,16 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(/img/fondoSeleccion.gif) no-repeat center/cover;
+    background: url(../img/fondoSeleccion.gif) no-repeat center/cover;
 }
 #segundaPantalla{
-    background: url(/img/fondoPelea.gif) no-repeat center/cover;
+    background: url(../img/fondoPelea.gif) no-repeat center/cover;
 }
 #pantalla1pj{
-    background: url(/img/fondo2pantalla.gif) no-repeat center/cover;
+    background: url(../img/fondo2pantalla.gif) no-repeat center/cover;
 }
 #terceraPantalla{
-    background: url(/img/derrota.gif) no-repeat center/cover;
+    background: url(../img/derrota.gif) no-repeat center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@
     font-family: 'Trade Winds', cursive;
 }
 #pantallaHasGanado{
-    background: url(/img/victoria.gif) no-repeat center/cover;
+    background: url(../img/victoria.gif) no-repeat center/cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,24 +32,24 @@
 #barbaroCont{
     height: 30em;
     width: 20em;
-    background: url(/img/barbaro.png)no-repeat center/cover;
+    background: url(../img/barbaro.png)no-repeat center/cover;
     margin: 10px;
 }
 #ladronCont{
     height: 30em;
     width: 20em;
-    background: url(/img/ladron.png) no-repeat center/cover;
+    background: url(../img/ladron.png) no-repeat center/cover;
 }
 #pistoleroCont{
     height: 30em;
     width: 20em;
-    background: url(/img/pistolero.png) no-repeat center/cover;
+    background: url(../img/pistolero.png) no-repeat center/cover;
     margin: 10px;
 }
 #guerreraCont{
     height: 30em;
     width: 20em;
-    background: url(/img/warrior.png) no-repeat center/cover;
+    background: url(../img/warrior.png) no-repeat center/cover;
 
 }
 
