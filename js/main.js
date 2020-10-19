@@ -58,12 +58,12 @@ function ladronPush(){
     let player1 = personajes[0];
     let player2 = personajes[1];
    if (personajes[0] == ladron){
-    imagenP1.innerHTML = '<img src = "/img/ThethiefR.png">';
+    imagenP1.innerHTML = '<img src = "./img/ThethiefR.png">';
     }else if(personajes[1] == ladron){
-    document.getElementById('fotoP22').innerHTML = '<img src = "/img/ThethiefR.png">';
+    document.getElementById('fotoP22').innerHTML = '<img src = "./img/ThethiefR.png">';
     }else if(personajes[0] == ladron && personajes[1] == ladron){
-    document.getElementById('fotoP11').innerHTML = '<img src = "/img/ThethiefR.png">';
-    document.getElementById('fotoP22').innerHTML = '<img src = "/img/ThethiefR.png">';
+    document.getElementById('fotoP11').innerHTML = '<img src = "./img/ThethiefR.png">';
+    document.getElementById('fotoP22').innerHTML = '<img src = "./img/ThethiefR.png">';
    }
     arrMax();
 
